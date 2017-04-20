@@ -1,0 +1,19 @@
+Instruction to install sagc.h in DevC++.
+
+1.You must have 3 files.
+					- sagc.h
+					- libsagc.a
+					- test.cpp
+
+2. Open DevC++ installed directory By Right Clicking the shortcut and click open file location.
+3. Inside DevC++ installed directory open MinGW64 Folder.
+4. copy sagc.h to include Folder which is inside MinGW64.
+5. Again copy libsagc.a to lib Folder which is inside MinGW64.
+6. now open test.cpp in DevC++.
+7. in the menubar go to tools->Compiler Options.
+8. In the Genaral Tab make sure the button saying "Add the following command when calling linker." is checked.
+9. Inside the box just below it add the following command " -lsagc " without quotes.
+10. Click OK
+11. Now Compile and Run the test program.
+
+					
