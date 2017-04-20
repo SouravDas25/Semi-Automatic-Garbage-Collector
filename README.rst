@@ -41,3 +41,9 @@ For Example. ::
 	
 	
 A specific data structure can have several other dynamically allocated memories like a linked list can contain a many nodes. Now we no longer need to assign or register all those nodes all we need to do is register the starting node and a function that will free all the other nodes. Thus the overhead of freeing all of them will be reduce to one.
+
+
+Documentation
+-------------
+ <http://dasemporium.esy.es/sagc>
+ 
