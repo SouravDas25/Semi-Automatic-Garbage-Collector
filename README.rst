@@ -24,3 +24,20 @@ For Example : example.c   ::
 		//OR more specifically when the variable 'r' is destroyed.
 		return 0;
 	}
+
+No Need to free the variable.
+
+There are a lot of Fully-Automatic Garbage Collector out there which frees the dynamic memory allocated without doing anything, but there is a cost to those kind of garbage collector creates a lot of overhead for your program. This is a Semi-Automatic Garbage Collector It lets you have a bit of control over your dynamic allocations while doing most of the hard work.
+
+It lets you choose what to free automatically and what not to free.
+It lets you assign destructor function which reduces a ton of overheads.
+It lets you maintain the local scope of variables for dynamic memory also.
+It lets you do what could not be done before like returning array from function and creating c object/class.
+It is designed to be efficient and compatible with modern Abstract Data Structure and Custom made C object the latest versions of the library contain specific code where destructor functions can be called upon group of dynamically allocated memory.
+
+For Example. :: 
+
+	sagc_RegisterVar( variable , destructor_function );
+	
+	
+A specific data structure can have several other dynamically allocated memories like a linked list can contain a many nodes. Now we no longer need to assign or register all those nodes all we need to do is register the starting node and a function that will free all the other nodes. Thus the overhead of freeing all of them will be reduce to one.
