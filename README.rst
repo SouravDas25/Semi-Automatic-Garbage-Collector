@@ -13,7 +13,7 @@ All you need to do is allocate dynamic memory using our sagc_malloc or sagc_call
 For Example : example.c   ::
 
 	#include <stdio.h>
-	#include "Gc.h"
+	#include "sagc.h"
 
 	int any_function()
 	{
