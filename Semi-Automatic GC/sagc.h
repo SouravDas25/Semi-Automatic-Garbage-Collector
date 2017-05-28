@@ -29,8 +29,10 @@ void* sagc_calloc(int n,int size);
 void* sagc_malloc(UINT size);
 
 /*prints the occupied stack .*/
-#define sagc_Garbagecheck(n) sagc_inner_Garbagecheck((void*)&n)
-void sagc_inner_Garbagecheck();
+#define sagc_Dump(n) __sagc_Dump((void*)&n)
+void __sagc_Dump(void * add);
+
+void sagc_memCheck();
 
 /*frees the memory from occupied stack .*/
 void sagc_free(void* a);
