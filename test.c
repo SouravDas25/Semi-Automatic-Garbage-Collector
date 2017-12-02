@@ -1,6 +1,6 @@
 
 #include <stdio.h>
-#include "Gc.h"
+#include "Gc.c"
 
 int do_nothing()
 {
