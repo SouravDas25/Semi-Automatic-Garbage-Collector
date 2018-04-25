@@ -10,20 +10,22 @@ This library has been created with that In mind, Aiming at the above problem spe
 
 All you need to do is allocate dynamic memory using our sagc_malloc or sagc_calloc function and send the pointer which holds the address to such allocated blocks to a function and we will make sure that the block is freed whenever the pointer is destroyed.
 
-For Example : example.c   ::
+### For Example.
+```c
 
-	#include <stdio.h>
-	#include "sagc.h"
+#include <stdio.h>
+#include "sagc.h"
 
-	int any_function()
-	{
-		int * r = sagc_malloc(sizeof(int));
-		sagc_RegisterVar(r);
-		//Your code
-		//The allocated memory will be freed when the function exits.
-		//OR more specifically when the variable 'r' is destroyed.
-		return 0;
-	}
+int any_function()
+{
+	int * r = sagc_malloc(sizeof(int));
+	sagc_RegisterVar(r);
+	//Your code
+	//The allocated memory will be freed when the function exits.
+	//OR more specifically when the variable 'r' is destroyed.
+	return 0;
+}
+```
 
 No Need to free the variable.
 
@@ -35,10 +37,10 @@ It lets you maintain the local scope of variables for dynamic memory also.
 It lets you do what could not be done before like returning array from function and creating c object/class.
 It is designed to be efficient and compatible with modern Abstract Data Structure and Custom made C object the latest versions of the library contain specific code where destructor functions can be called upon group of dynamically allocated memory.
 
-For Example. :: 
-
+### For Example.
+```c
 	sagc_RegisterVar( variable , destructor_function );
-	
+```
 	
 A specific data structure can have several other dynamically allocated memories like a linked list can contain a many nodes. Now we no longer need to assign or register all those nodes all we need to do is register the starting node and a function that will free all the other nodes. Thus the overhead of freeing all of them will be reduce to one.
 
